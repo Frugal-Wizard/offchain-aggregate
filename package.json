@@ -1,0 +1,44 @@
+{
+  "name": "@frugalwizard/offchain-aggregate",
+  "version": "1.0.0",
+  "description": "A way to read aggregate state from an EVM blockchain without having to deploy a contract for that specific purpose",
+  "license": "MIT",
+  "author": "Frugal-Wizard",
+  "repository": "https://github.com/Frugal-Wizard/offchain-aggregate.git",
+  "scripts": {
+    "test:clean": "rimraf test/artifacts",
+    "test:solc": "glob --cmd='solcjs --optimize --abi --bin --include-path node_modules/ --base-path . --output-dir test/artifacts/' 'test/contracts/**/*.sol'",
+    "test:mocha": "mocha",
+    "test": "run-s test:clean test:solc test:mocha",
+    "lint": "eslint . --ext .ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.9.2",
+    "@types/chai": "^4.3.5",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/levelup": "^5.1.2",
+    "@types/memdown": "^3.0.1",
+    "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^8.44.0",
+    "ethers": "^6.6.2",
+    "ganache": "^7.9.0",
+    "glob": "^10.3.1",
+    "levelup": "^5.1.1",
+    "memdown": "^6.1.1",
+    "mocha": "^10.2.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
+    "solc": "0.8.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "web3": "^4.0.2"
+  },
+  "overrides": {
+    "semver": ">=7.5.2"
+  }
+}
